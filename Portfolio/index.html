@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zayan Shahid - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Za<span class="Color">Y</span>aN</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="layout" id="home">
+        <section class="First">
+            <div class="LeftSection">Hey! I am <span class="Color">Zayan</span>
+                <div>A newbie</div>
+                <span id="element"></span>
+                <div class="btn">
+                    <button>Download CV</button>
+                    <button>Visit Github</button>
+                </div>
+            </div>
+            <div class="RightSection"><img src="channels4_profile-removebg-preview.png"></div>
+        </section>
+    </div>
+    <div class="layout" id="about">
+        <div>
+            <h1> About Zayan </h1>
+            <p>Hello, I'm Zayan, and I'm on an exciting journey to become a skilled web developer. While I may be new to
+                the
+                world of web development, my passion for creating amazing websites is boundless.
+            </p>
+            <h2>My Journey:</h2>
+            <p> journey into web development began with a simple fascination for the web and its endless possibilities.
+                I'm
+                a firm believer that learning is a lifelong adventure, and I've eagerly embraced every opportunity to
+                expand
+                my knowledge and skills in this field.</p>
+            <h2>I'm Learning:</h2>
+            <h4>As a newbie, I'm actively learning and gaining proficiency in:</h4>
+            <ul class="a">
+                <li>Front-End Development: I'm honing my skills in HTML, CSS, and JavaScript to create responsive
+                    and captivating
+                    user interfaces.</li>
+                <li>Back-End Development: I'm diving into server-side programming and databases to understand how
+                    data-driven web
+                    applications work.</i>
+                <li>Frameworks: I'm eager to explore popular frameworks like React and Angular to build dynamic web
+                    experiences.
+                <li>Version Control: I'm becoming proficient in using Git for managing code and collaborating with
+                    others.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layout" id="projects">
+        <div class="row">
+            <div class="column">
+                <img src="Capture.PNG">
+                <div class="content">
+                    <p>Calculator</p>
+                    <p>HTML/CSS/JS</p>
+                    <p class="bottom">Get Source Code</p>
+                </div>
+            </div>
+            <div class="column">
+                <img src="POS.png">
+                <div class="content">
+                    <p>Point of Sale</p>
+                    <p>Python</p>
+                    <p class="bottom">Get Source Code</p>
+                </div>
+            </div>
+            <div class="column">
+                <img src="red-question-mark-with-white-person-illustration-transparent-free-Mchpt4.png">
+                <div class="content">
+                    <p>More Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout" id="contact">
+        <form name="submit-to-google-sheet" class="Contact">
+            <div class="box">
+                <h1>Contact</h1>
+                <input type="text" id="name" name="Name" required placeholder="Enter Your Name">
+                <input type="email" id="email" name="Email" required placeholder="Enter Your Email">
+                <input type="text" id="subject" name="Subject" required placeholder="Subject/Reason">
+                <textarea id="message" name="Message" required placeholder="Write Your Message Here.."></textarea>
+                <div class="btn"> <button type="submit" class="btn">SEND</button></div>
+                <span id='msg'></span>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p class="footer-text">Za<span class="Color">Y</span>aN</p>
+        <h3>copyright &#169; awanplays.online | All rights reserved</h3>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: [' Web Developer '],
+            typeSpeed: 50,
+        });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHkSplmOhXNW7I9GSFe2Oft0rglabDG3ANEpL2GUq6jY5PK91M0atKa7lbo9bUjRVq5Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    <script>
+        $(".input_text").focus(function () {
+            $(this).prev('.fa').addclass('glowIcon')
+        })
+        $(".input_text").focusout(function () {
+            $(this).prev('.fa').removeclass('glowIcon')
+        })</script>
+
+
+</body>
+
+</html>
